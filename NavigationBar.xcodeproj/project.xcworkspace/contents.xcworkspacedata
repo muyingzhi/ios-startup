@@ -2,6 +2,24 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../NavigationBar/FirstViewController.h">
+   </FileRef>
+   <FileRef
+      location = "group:../NavigationBar/FirstViewController.m">
+   </FileRef>
+   <FileRef
+      location = "group:../NavigationBar/FirstViewController.xib">
+   </FileRef>
+   <FileRef
+      location = "group:../NavigationBar/MessageViewController.h">
+   </FileRef>
+   <FileRef
+      location = "group:../NavigationBar/MessageViewController.m">
+   </FileRef>
+   <FileRef
+      location = "group:../NavigationBar/MessageViewController.xib">
+   </FileRef>
+   <FileRef
       location = "self:NavigationBar.xcodeproj">
    </FileRef>
 </Workspace>
