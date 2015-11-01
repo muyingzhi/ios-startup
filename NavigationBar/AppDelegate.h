@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
-    UITabBarController* mainTabController_;
     UINavigationController *rootController_;
-    UIViewController* loginController_;
 
 }
 

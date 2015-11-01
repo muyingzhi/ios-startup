@@ -8,11 +8,6 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import "TopMenuViewController.h"
-#import "ViewController1.h"
-#import "ViewController2.h"
-#import "ViewController3.h"
-#import "MessageViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,30 +21,11 @@
     CGRect bounds = [[UIScreen mainScreen] bounds];
     _window = [[UIWindow alloc] initWithFrame:bounds];
     
-    loginController_ = [[LoginViewController alloc] init];
-    mainTabController_ = [[UITabBarController alloc] init];
-    //-----导航页
-    TopMenuViewController *topMenu = [[TopMenuViewController alloc] init];
-    rootController_ = [[UINavigationController alloc] initWithRootViewController:topMenu];
-    //----
-    ViewController1* tab1 = [[ViewController1 alloc] init];
-    ViewController2* tab2 = [[ViewController2 alloc] init];
-//    ViewController3* tab3 = [[ViewController3 alloc] init];
-    MessageViewController* tab3 = [[MessageViewController alloc] initWithNibName:@"MessageViewController" bundle:nil];
-    //---------4个tab组装到mainTabController
-    NSArray* tabs = [NSArray arrayWithObjects:tab1,tab2,tab3,rootController_, nil];//10.20,最后不是topMenu，而是rootController_
-    [mainTabController_ setViewControllers:tabs animated:NO];
-    //----
-    [_window addSubview:loginController_.view];
-    [_window addSubview:mainTabController_.view];
-    [_window bringSubviewToFront:loginController_.view];//---开始时加载两个view，只是front的是login，10.20注释
+    UIViewController *loginController_ = [[LoginViewController alloc] init];
     
-//    rootController_ = [[UINavigationController alloc] initWithRootViewController:loginController_];
-//    [_window setRootViewController:rootController_];//--指定一个根view
+    rootController_ = [[UINavigationController alloc] initWithRootViewController:loginController_];
+    [_window setRootViewController:rootController_];//--指定一个根view
     [_window makeKeyAndVisible];
-//    self.window = [[UIWindow alloc] initWithFrame:bounds];
-//    self.window.rootViewController = tab3;
-//    [self.window makeKeyAndVisible];
     return YES;
 }
 
