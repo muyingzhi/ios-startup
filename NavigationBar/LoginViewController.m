@@ -15,7 +15,7 @@
     [super viewDidLoad];
     NSLog(@"view did load");
     // Do any additional setup after loading the view, typically from a nib.
-    CGRect bounds = CGRectMake(0, 100, self.view.bounds.size.width, 60);
+    //CGRect bounds = CGRectMake(0, 100, self.view.bounds.size.width, 60);
     UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
     label.text = @"Hello World";
     label.textAlignment = NSTextAlignmentCenter;
