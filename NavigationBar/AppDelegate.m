@@ -36,8 +36,10 @@
     ViewController2* tab2 = [[ViewController2 alloc] init];
 //    ViewController3* tab3 = [[ViewController3 alloc] init];
     MessageViewController* tab3 = [[MessageViewController alloc] initWithNibName:@"MessageViewController" bundle:nil];
+    tab3.title = @"Message";
     //---------4个tab组装到mainTabController
     NSArray* tabs = [NSArray arrayWithObjects:tab1,tab2,tab3,rootController_, nil];//10.20,最后不是topMenu，而是rootController_
+
     [mainTabController_ setViewControllers:tabs animated:NO];
     //----
     [_window addSubview:loginController_.view];
