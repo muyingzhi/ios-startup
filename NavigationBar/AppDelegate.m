@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-
+#import "WebViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -22,8 +22,10 @@
     _window = [[UIWindow alloc] initWithFrame:bounds];
     
     UIViewController *loginController_ = [[LoginViewController alloc] init];
-    
-    rootController_ = [[UINavigationController alloc] initWithRootViewController:loginController_];
+    WebViewController* webTab = [[WebViewController alloc] init];
+    webTab.title = @"WEB";
+
+    rootController_ = [[UINavigationController alloc] initWithRootViewController:webTab];
     [_window setRootViewController:rootController_];//--指定一个根view
     [_window makeKeyAndVisible];
     return YES;

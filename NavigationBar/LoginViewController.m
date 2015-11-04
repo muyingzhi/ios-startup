@@ -12,6 +12,7 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "MessageViewController.h"
+#import "WebViewController.h"
 
 
 @implementation LoginViewController
@@ -46,9 +47,13 @@
     ViewController1* tab1 = [[ViewController1 alloc] init];
     ViewController2* tab2 = [[ViewController2 alloc] init];
     //    ViewController3* tab3 = [[ViewController3 alloc] init];
+    WebViewController* webTab = [[WebViewController alloc] init];
+    webTab.title = @"WEB";
     MessageViewController* tab3 = [[MessageViewController alloc] initWithNibName:@"MessageViewController" bundle:nil];
-    //---------4个tab组装到mainTabController
-    NSArray* tabs = [NSArray arrayWithObjects:tab1,tab2,tab3, nil];//10.20,最后不是topMenu，而是rootController_
+    tab3.title = @"Message";
+    tab3.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
+    //---------5个tab组装到mainTabController
+    NSArray* tabs = [NSArray arrayWithObjects:tab1,tab2,tab3,webTab, nil];
     [mainTabController_ setViewControllers:tabs animated:NO];
     
 }
