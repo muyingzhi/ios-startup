@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>766528AB-1A4C-4B79-94B3-0E0B9A12E3F6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NavigationBar</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1888DDD7E419CA0FE25CF4A6C4E92DAB27523BCC</key>
+		<string>https://github.com/muyingzhi/ios-startup.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NavigationBar.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1888DDD7E419CA0FE25CF4A6C4E92DAB27523BCC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/muyingzhi/ios-startup.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1888DDD7E419CA0FE25CF4A6C4E92DAB27523BCC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1888DDD7E419CA0FE25CF4A6C4E92DAB27523BCC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NavigationBar</string>
+		</dict>
+	</array>
+</dict>
+</plist>
