@@ -26,6 +26,7 @@
     webTab.title = @"WEB";
 
     rootController_ = [[UINavigationController alloc] initWithRootViewController:webTab];
+    rootController_.toolbarHidden = NO;
     [_window setRootViewController:rootController_];//--指定一个根view
     [_window makeKeyAndVisible];
     return YES;

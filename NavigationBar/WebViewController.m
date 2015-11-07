@@ -24,8 +24,10 @@
     activityIndicatory_ = [[UIActivityIndicatorView alloc] init];
     activityIndicatory_.frame = CGRectMake(0, 0, 20, 20);
     UIBarButtonItem* indicator = [[UIBarButtonItem alloc] initWithCustomView:activityIndicatory_  ];
-    UIBarButtonItem* adjustment = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    NSArray* buttons = [NSArray arrayWithObjects:adjustment,indicator,adjustment,  nil];
+    UIBarButtonItem* adjustment = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem* refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:nil action:nil];
+    UIBarButtonItem* goback = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
+    NSArray* buttons = [NSArray arrayWithObjects:refresh,adjustment,indicator,adjustment,goback,  nil];
     [self setToolbarItems:buttons animated:YES];
     
 }
