@@ -7,21 +7,16 @@
 //
 
 #import "LoginViewController.h"
-#import "TopMenuViewController.h"
-#import "ViewController1.h"
-#import "ViewController2.h"
-#import "ViewController3.h"
-#import "MessageViewController.h"
 #import "WebViewController.h"
 
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    NSLog(@"view did load");
-    // Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"view did load ......");
+    [super viewDidLoad];    // Do any additional setup after loading the view, typically from a nib.
     //CGRect bounds = CGRectMake(0, 100, self.view.bounds.size.width, 60);
+    //----标签
     UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
     label.text = @"Hello World";
     label.textAlignment = NSTextAlignmentCenter;
@@ -29,7 +24,7 @@
     label.backgroundColor = [UIColor whiteColor];
     label.textColor = [UIColor blackColor];
     [self.view addSubview:label];
-    
+    //-------登录按钮
     UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setTitle:@"登录"
             forState:UIControlStateNormal];
@@ -39,31 +34,25 @@
     button.center = newPoint;
     button.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     [button addTarget:self action:@selector(buttonDidPush) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    //----tabbar容器
-    mainTabController_ = [[UITabBarController alloc] init];
+    //---
     
-    //----
-    ViewController1* tab1 = [[ViewController1 alloc] init];
-    ViewController2* tab2 = [[ViewController2 alloc] init];
-    //    ViewController3* tab3 = [[ViewController3 alloc] init];
-    WebViewController* webTab = [[WebViewController alloc] init];
-    webTab.title = @"WEB";
-    MessageViewController* tab3 = [[MessageViewController alloc] initWithNibName:@"MessageViewController" bundle:nil];
-    tab3.title = @"Message";
-    tab3.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
-    //---------5个tab组装到mainTabController
-    NSArray* tabs = [NSArray arrayWithObjects:tab1,tab2,tab3,webTab, nil];
-    [mainTabController_ setViewControllers:tabs animated:NO];
+    [self.view addSubview:button];
     
 }
-
+- (void) viewWillAppear:(BOOL)animated{
+    NSLog(@"view will appear ......");
+    //----当返回loginController，隐藏toolbar
+    self.navigationController.toolbarHidden = YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 -(void)buttonDidPush{
-    [self.navigationController pushViewController:mainTabController_
+    WebViewController* webVC = [[WebViewController alloc] init];
+    //----登录成功后，显示toolbar
+    self.navigationController.toolbarHidden = NO;
+    [self.navigationController pushViewController:webVC
                                           animated:YES];
     
 }

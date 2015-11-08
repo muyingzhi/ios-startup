@@ -11,7 +11,6 @@
 @interface WebViewController : UIViewController<UIWebViewDelegate>{
     @private UIWebView* webView_;
     UIActivityIndicatorView* activityIndicatory_;
-
 }
 
 @end

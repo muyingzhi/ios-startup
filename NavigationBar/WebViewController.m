@@ -13,14 +13,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"明确显示通信状态";
+    self.title = @"科学穿着";
+    //self.navigationItem.prompt=@"prompt";
+    self.navigationController.navigationBar.tintColor = [UIColor blueColor];
+    UIImage* image = [UIImage imageNamed:@"correct.png"];
+    //UIImageView* imageview = [[UIImageView alloc] initWithImage:image];
+    UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithImage:image landscapeImagePhone:image style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
+    
+    self.navigationItem.leftBarButtonItem = button;
+    //------
     webView_ = [[UIWebView alloc] init];
     webView_.delegate = self;
     webView_.frame = self.view.bounds;
     webView_.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     webView_.scalesPageToFit = YES;
     [self.view addSubview:webView_];
-    //工具条中追加活动指示器
+    //------工具条中追加活动指示器
     activityIndicatory_ = [[UIActivityIndicatorView alloc] init];
     activityIndicatory_.frame = CGRectMake(0, 0, 20, 20);
     UIBarButtonItem* indicator = [[UIBarButtonItem alloc] initWithCustomView:activityIndicatory_  ];
@@ -33,7 +41,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://bing.com"]];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3000/dress"]];
     [webView_ loadRequest:request];
 }
 -(void)webViewDidStartLoad:(UIWebView *)webView{
@@ -61,5 +69,9 @@
 */
 - (void)kick:(NSString *)url{
     
+}
+-(void)goBack{
+    NSLog(@"goback......");
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 @end
